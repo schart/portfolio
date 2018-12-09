@@ -1,0 +1,35 @@
+<nav>
+  <div>
+    <div>
+      <!-- <div class="pushHead">
+        <h3>Open Projects</h3>
+        <ul>
+          <li><a target="_blank" href="https://impedans.me">impedans APIs</a></li>
+          <li><a target="_blank" href="https://impedans.me/imp">imp</a></li>
+          <li><a target="_blank" href="https://github.com/schart/simple-filedirectory/#simple-filedirectory">simple-filedirectory</a></li>
+        </ul>
+      </div> -->
+      <h3>Archive</h3>
+      <ul>
+        <li><a href="#" (click)="sortDate('')" data-test="" class="currentYear showAll dateShowall">Show everything</a></li>
+        <li><a href="#/2018" (click)="sortDate('2018')" data-test="2018">2018</a></li>
+        <li><a href="#/2017" (click)="sortDate('2017')" data-test="2017">2017</a></li>
+        <li><a href="#/2016" (click)="sortDate('2016')" data-test="2016">2016</a></li>
+        <li><a href="#/2015" (click)="sortDate('2015')" data-test="2015">2015</a></li>
+        <li><a href="#/2014" (click)="sortDate('2014')" data-test="2014">2014</a></li>
+      </ul>
+      <h3>Tags</h3>
+      <ul>
+        <li><a href="#" (click)="sort(' ')"  data-test=" " class="current showAll tagsShowall">Show everything</a></li>
+<!--         <li><a (click)="sort('design')" data-test="design" >Design</a></li>
+        <li><a (click)="sort('javascript')" data-test="javascript" >Javascript</a></li> -->
+        <li><a href="#/app" (click)="sort('app')" data-test="app" >Apps</a></li>
+        <li><a href="#/website" (click)="sort('website')" data-test="website" >Websites</a></li>
+        <li><a href="#/music" (click)="sort('music')" data-test="music" >Music</a></li>
+      </ul>
+    </div>
+    <div>
+      <button class="orange goUpButton" onclick="document.body.scrollTop = 0;document.documentElement.scrollTop = 0;">&uarr;</button>
+    </div>
+  </div>
+</nav>

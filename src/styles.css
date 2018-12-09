@@ -1,1 +1,333 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing:border-box;
+}
+body{
+    background:#f9f9f9;
+    text-rendering: optimizeLegibility; 
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+}
+:root{
+    --orange:#C67A70;
+    --dark:#312f2f;
+    --green:#84dccf;
+    --blue:#a6d9f7;
+    --pink:#d1b1c8;
+}
+body, html{
+    margin:0;
+    padding:0;
+}
+html{
+    min-height:100vh;
+    background:var(--dark);
+}
+@keyframes bodyAnim{
+    0%{
+        opacity:0;
+    }
+    70%{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+.pink{background:var(--pink);}
+.dark{background:var(--dark);color:#f9f9f9;}
+.orange{background:var(--orange);}
+.green{background:var(--green);}
+.blue{background:var(--blue);}
+#container{
+    display:flex;
+    min-height:100vh;
+}
+body, input, button{
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Code Pro', monospace; */
+}
+aside, main{
+    padding:10px;
+}
+aside{
+    transition:width 0.2s ease-in-out;
+    width:200px;
+    background:var(--orange);
+}
+@keyframes asideAnimation{
+    from{
+        width:0px;
+    }
+    to{
+        width:200px;
+    }
+}
+main{
+    flex-grow:1;
+    background:#f9f9f9;
+    z-index:30;
+}
+input, button{
+    border:1px solid;
+    padding:8px 10px;
+    outline:none !important;
+}
+button i{
+    font-size:inherit !important;
+    transform:translate(0px, 2px) scale(1.4);
+}
+button{
+    transition:all 0.2s ease-in-out;
+    cursor:pointer;
+    position:relative;
+    font-size:13px;
+    overflow:hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    animation:buttonAnimation 0.2s ease-in-out;
+}
+@keyframes buttonAnimation{
+    from{
+        transform:translate(20px, 0px);
+        opacity:0;
+    }
+    to{
+        transform:translate(0px, 0px) scale(1);
+        opacity:1;
+    }
+}
+button:after{
+    transition:all 0.2s ease-in-out;
+    display:block;
+    position:absolute;
+    content:"";
+    width: 0; 
+    height: 0; 
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+  
+    border-left: 120px solid rgba(121, 130, 170, 0.2);
+    top:-10px;
+    left:0;
+    right:100%;
+    bottom:0;
+    transform:translate(-30px, 30px);
+}
+button:hover:after{
+    transition:all 0.3s ease-in-out;
+    transform:translate(0px, -10%);
+}
+button:hover{
+    transition:all 0.2s ease-in-out;
+    transform:translate(0px, -2px);
+}
+.input-field{
+    margin:10px 0;
+}
+.pushIn{
+    padding:50px;
+    margin:-10px -10px 10px;
+    padding-top:0px;
+}
+.center{
+    /* max-width:970px; */
+    max-width:700px;
+    margin:0 auto;
+}
+.body p, .intro p{
+    margin-top:0px !important;
+}
+.intro h3{
+    display:none;
+}
+.hide{
+    display:none;
+}
+.body p a{
+    display: inline-block;
+    color: var(--orange);
+    padding: 2px 5px;
+    text-decoration: none;
+}
+.body p a:hover{
+    text-decoration: underline;
+}
+video, img{
+    max-width:100%;
+    z-index: 30;
+    position: relative;
+}
+button:nth-child(1){
+    animation-duration:0.2s;
+}
+button:nth-child(2){
+    animation-duration:0.3s;
+}
+button:nth-child(3){
+    animation-duration:0.4s;
+}
+article h3:before{
+    content:"announcement";
+    font-size: 80%;
+    margin-right: 12px;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    background: var(--pink);
+    padding: 6px;
+    border-radius: 20px;
+    color: #f3e5f1;
+    text-shadow: 0px 1px 0px #9e2a8e;
+}
+.noBorder{
+    border-color:transparent !important;
+    background:#222 !important;
+}
+article.design h3:before{
+    content:"photo_library";
+}
+article.website h3:before{
+    content:"web";
+}
+article.music h3:before{
+    content:"album";
+}
+article.app h3:before{
+    content:"apps";
+}
+.intro{
+    opacity: 0.5;
+}
+.intro a{
+    color:#333;
+}
+.intro a:hover{
+    color:#000;
+}
+
+header{
+    position:relative;
+    min-height:30vh;
+    background:#323232;
+}
+
+
+
+
+
+@media screen and (max-width:500px){
+    article h3{
+        font-size:22px !important;
+    }
+    article p{
+        font-size:13px;
+    }
+    .pushIn, header{
+        padding:30px !important;
+    }
+    aside{
+        display:none;
+    }
+    body.darkMode aside{
+        border-right: 0px solid #ad6a61
+    }
+}
+@media screen and (min-width:900px){
+    .topHeaderDiv i{
+        /* display:block !important; */
+    }
+}
+@media screen and (min-width:2000px){
+    body{
+        font-size:120%;
+    }
+    article{
+        line-height:1.5em;
+    }
+    .intro{
+        max-height:30px !important;
+    }
+}
+@media screen and (min-width:2400px){
+    body{
+        font-size:150%;
+    }
+    .intro{
+        max-height:34px !important;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        color:#dedede;
+    }
+    main, aside{
+        background:var(--dark);
+    }/*
+    aside{
+        border-right:10px solid #ad6a61;
+    }*/
+    article h3 a{
+        color:#dedede !important;
+    }
+    .tag{
+        color:var(--dark) !important;
+    }
+    article h3 a i{
+        color:#6b5465 !important;
+    }
+}
+body.darkMode{
+    color:#dedede;
+}
+body.darkMode main, body.darkMode aside{
+    background:var(--dark);
+}
+body.darkMode aside{
+    background: #2f3031 !important;
+}
+body.darkMode header, body.darkMode, body.darkMode aside, body.darkMode aside h3, body.darkMode aside ul li a{
+    color:#dedede !important;
+}
+body.darkMode{
+    opacity:0.98;
+}
+
+body.darkMode article h3 a{
+    color:#dedede !important;
+}
+body.darkMode .tag{
+    color:var(--dark) !important;
+}
+body.darkMode article h3 a i{
+    color:#6b5465 !important;
+}
+body.darkMode .intro a{
+    color:#f9f9f9;
+}
+.goUpButton{
+    animation:none !important;
+}
+.body{
+    padding-top:15px;
+}
+body.darkMode aside app-navigation nav div ul li a:hover, .darkMode .showAll[_ngcontent-c2]:hover, .darkMode ul[_ngcontent-c2] li[_ngcontent-c2] a[_ngcontent-c2]:hover{background:#ad6a614f !important;}

@@ -1,0 +1,74 @@
+ul, li{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+ul li a{
+    text-decoration:none;
+    display:block;
+    color:#f9f9f9;
+    margin:-10px -10px 10px;
+    padding:10px;
+    cursor:pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    font-size:13px;
+}
+ul li a:hover, .showAll:hover{
+    transition:background 0.1s ease-in, padding 0.2s;
+    background:var(--dark) !important;
+    padding-left:12px;
+}
+ul li a.currentYear, ul li a.current{
+    transition:background 0.1s ease-in, padding 0.2s;
+    padding-left:12px;
+    background:#ad6a61;
+}
+nav{
+    padding:10px;
+}
+nav > div{
+    position:fixed;
+    top:0;
+    left:0;
+    width:200px;
+    padding:20px;
+    overflow-y:auto;
+    bottom:0;
+    display:flex;
+    flex-direction:column;
+}
+nav > div > div:first-child{
+    flex-grow:1;
+}
+nav div div button{
+    display:block;
+    width:100%;
+    font-size:16px;
+}
+.pushHead{
+    min-height:calc(30vh + 80px);
+}
+.showAll{
+    font-size:80%;
+}
+.showAll.current{
+    background:#ad6a61 !important;
+}
+.goUpButton{
+    transition:all 0.2s ease-in-out;
+    opacity:0;
+    pointer-events:none;
+    transform:translate(0px, -10px);
+}
+.goUpButton.showUp{
+    transition:all 0.2s ease-in-out;
+    opacity:1;
+    pointer-events:all;
+    transform:translate(0px, 0px);
+}

@@ -1,0 +1,218 @@
+button, input[type="submit"]{
+    background:var(--pink);
+    color:var(--dark);
+    text-transform: uppercase;
+    cursor:pointer;
+    font-weight:bold;
+}
+li button{
+    float:right;
+}
+ul, li{
+    width:100%;
+    list-style:none;
+    padding:0;
+}
+li{
+    margin:0 0 10px;
+    line-height:30px;
+}
+article{
+    transition:transform 0.2s ease-in-out;
+    border-left:2px solid var(--dark);
+    padding:15px;
+    margin:50px 0 50px;
+    position:relative;
+    overflow:hidden;
+    animation:articleAnimation 0.2s ease-in-out;
+    animation-duration:0.2s;
+}
+article:nth-child(2){
+    animation-duration:0.4s;
+}
+
+article:nth-child(3){
+    animation-duration:0.6s;
+}
+
+article:nth-child(4){
+    animation-duration:0.7s;
+}
+
+article:nth-child(5){
+    animation-duration:0.8s;
+}
+
+article:nth-child(6){
+    animation-duration:0.9s;
+}
+article:nth-child(7){
+    animation-duration:1.0s;
+}
+
+article:nth-child(8){
+    animation-duration:1.1s;
+}
+
+article:nth-child(9){
+    animation-duration:1.2s;
+}
+article:nth-child(10){
+    animation-duration:1.3s;
+}
+
+article:nth-child(11){
+    animation-duration:1.4s;
+}
+
+article:nth-child(12){
+    animation-duration:1.5s;
+}
+@keyframes articleAnimation{
+    from{
+        opacity:0;
+        transform:translate(0px, 10px);
+    }
+    to{
+        opacity:1;
+        transform:translate(0px, 0px);
+    }
+}
+article:after{
+    transition:all 0.2s ease-in-out;
+    transition-delay:0.1s;
+    display:block;
+    position:absolute;
+    content:"";
+    width: 0; 
+    height: 0; 
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid transparent;
+    border-left: 120px solid rgba(182, 51, 171, 0.1);
+    top:-10px;
+    left:0;
+    right:100%;
+    bottom:0;
+    transform:translate(-50px, 30px);
+    pointer-events: none;
+}
+article:hover:after{
+    transition:all 0.2s ease-in-out;
+    transform:translate(-40px, 30px)
+}
+article:hover{
+    transition:all 0.3s ease-in-out;
+    background:rgba(180, 50, 192, 0.05);
+}
+article h3{
+    margin:0 0 10px;
+    font-size:32px;
+}
+article h3 a{
+    color:var(--dark);
+    cursor:pointer;
+    text-decoration:none;
+}
+article .body{
+    display:none;
+}
+article > div{
+    max-height:20px;
+    overflow:hidden;
+    max-width:70%;
+    position:relative;
+    margin-bottom:20px;
+}
+article.active .intro{
+    display:none;
+}
+
+article.active .body{
+    display:block;
+}
+article.active > div{
+    max-height:9999px;
+    max-width:100%;
+}
+article.active:hover{
+    background:transparent;
+}
+article.active{
+    transition:transform 0.2s ease-in-out;
+    /* padding-top:30px; */
+    transform:translate(0px, 20px);
+    border-color:transparent;
+    /* min-height:100vh; *//*
+    order:-1;*/
+}
+article.active footer{
+    transition:all 0.2s ease-in-out;
+    transform:translate(0px, 10px);
+}
+article h3 a:hover{
+    text-decoration:underline;
+}
+article footer{
+    font-size:80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+article.active:after{
+    transform:translate(0px, 200%);
+    opacity:0.4;
+}
+.tag{
+    display:inline-block;
+    margin:0 5px;
+    background:var(--pink);
+    padding:2px 5px;
+}
+.articleFlex{
+    display:flex;
+    flex-direction:column;
+}
+
+@media screen and (max-width:800px){
+    aside{
+        width:0px;
+        position: relative;
+        cursor:pointer;
+        pointer-events:none;
+    }
+    article footer{
+        flex-direction: column;
+    }
+    .articleTags{
+        margin-top:10px;
+        margin-left:-5px;
+    }
+    aside:after{
+        content:"";
+        display:block;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:10px;
+        width:1px;
+        height:100%;
+        background:#8c5952;
+    }
+    aside.activeAside{
+        width:200px !important;
+    }
+    article:after{
+        display:none;
+    }
+    .hide{
+        display:block !important;
+    }
+}
+.footerDiv, hr{
+    text-align:center;
+    animation:footerDivAnimation 2s ease-in-out;
+}
+@keyframes footerDivAnimation{
+    from{
+        opacity:0;
+    }
+}

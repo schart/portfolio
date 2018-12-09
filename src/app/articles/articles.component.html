@@ -1,0 +1,24 @@
+<div id="container">
+    <aside>
+        <app-navigation></app-navigation>
+    </aside>
+<main>
+        <app-header></app-header>
+        <div class="belowHeadDiv"></div>
+        <div class="pushIn">
+            <div class="center">
+                <div class="articleFlex">
+                    <article *ngFor="let a of articles; let i = index" class="post" [ngClass]="a.tags">
+                        <h3 attr.data-articleid="{{a.id}}"><a (click)="openArticle(a.id)">{{a.title}}</a></h3>
+                        <div class="intro" [innerHTML]="a.body"></div>
+                        <div class="body" [innerHTML]="a.body"></div>
+                        <footer>{{a.date}} <div class="articleTags"><span *ngFor="let b of a.tags; let in = index" class="tag">{{b}}</span></div></footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="footerDiv">&copy; 2018 - Håkon Underbakke</div>
+</main>
+
+</div>

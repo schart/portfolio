@@ -1,0 +1,47 @@
+<header>
+  <div class="center mainCenter">
+    <div class="topHeaderDiv">
+      <h1>Håkon Underbakke</h1>
+      <p>['hɔ:kʊn] - I ❤ Front-end.</p>
+      <i class="material-icons">code</i>
+      <i  class="material-icons musicnote">music_note</i>
+    </div>
+    <div>
+      <button class="pink" (click)="openContact()">Contact me</button>
+      <!-- onclick="window.location.href='mailto:haakon@underbakke.net'" -->
+      <button class="dark" onclick="window.location.href='https://haakon.underbakke.net/sl1ck'">All of my music</button>
+      <button class="dark right" (click)="darkMode()"><i class="material-icons">wb_sunny</i></button><!-- 
+      <button class="blue" onclick="window.location.href='https://haakon.underbakke.net/cv'">CV (Norwegian)</button> -->
+    </div>
+    <svg viewBox="0 0 120 28">
+        <defs> 
+          <mask id="xxx">
+            <circle cx="7" cy="12" r="40" fill="#fff" />
+          </mask>
+            <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+         </defs> 
+          <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+          <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+    </svg>
+  </div>
+  <div class="contact">
+    <div class="center">
+      <form action="https://haakon.underbakke.net/sendEmail.php" method="POST" class="submitThis">
+        <div class="topPart">
+        <div class="input-field">
+          <textarea class="senderBody" name="body" placeholder="Let's talk"></textarea>
+        </div>
+        <div class="input-field">
+          <input type="text" class="senderEmail" name="email" placeholder="youremail@example.com" />
+        </div>
+      </div>
+        <div class="centerinCenter">
+        <span class="display:flex;margin-bottom:15px;">
+            <button (click)="cancelContact()" class="dark noBorder"><i class="material-icons">chevron_left</i></button>
+            <button onclick="document.querySelector('.submitThis').submit()" class="pink contactBut">Send message</button>
+        </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>

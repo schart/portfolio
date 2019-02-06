@@ -80,7 +80,7 @@ input, button{
 }
 button i{
     font-size:inherit !important;
-    transform:translate(0px, 2px) scale(1.4);
+    transform:translate(0px, 2px) scale(1.4) translate3d(0,0,0);
 }
 button{
     transition:all 0.2s ease-in-out;
@@ -122,15 +122,15 @@ button:after{
     left:0;
     right:100%;
     bottom:0;
-    transform:translate(-30px, 30px);
+    transform:translate(-30px, 30px) translate3d(0,0,0);
 }
 button:hover:after{
     transition:all 0.3s ease-in-out;
-    transform:translate(0px, -10%);
+    transform:translate(0px, -10%) translate3d(0,0,0);
 }
 button:hover{
     transition:all 0.2s ease-in-out;
-    transform:translate(0px, -2px);
+    transform:translate(0px, -2px) translate3d(0,0,0);
 }
 .input-field{
     margin:10px 0;
@@ -323,6 +323,9 @@ body.darkMode article h3 a i{
 }
 body.darkMode .intro a{
     color:#f9f9f9;
+}
+body.darkMode article.active, body.darkMode article.active:hover{
+    background:#252222 !important;
 }
 .goUpButton{
     animation:none !important;

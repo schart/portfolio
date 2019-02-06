@@ -71,11 +71,11 @@ article:nth-child(12){
 @keyframes articleAnimation{
     from{
         opacity:0;
-        transform:translate(0px, 10px);
+        transform:translate(0px, 10px) translate3d(0,0,0);
     }
     to{
         opacity:1;
-        transform:translate(0px, 0px);
+        transform:translate(0px, 0px) translate3d(0,0,0);
     }
 }
 article:after{
@@ -93,12 +93,12 @@ article:after{
     left:0;
     right:100%;
     bottom:0;
-    transform:translate(-50px, 30px);
+    transform:translate(-50px, 30px) translate3d(0,0,0);
     pointer-events: none;
 }
 article:hover:after{
     transition:all 0.2s ease-in-out;
-    transform:translate(-40px, 30px)
+    transform:translate(-40px, 30px) translate3d(0,0,0)
 }
 article:hover{
     transition:all 0.3s ease-in-out;
@@ -140,14 +140,25 @@ article.active:hover{
 article.active{
     transition:transform 0.2s ease-in-out;
     /* padding-top:30px; */
-    transform:translate(0px, 20px);
+    transform:translate(0px, 20px) translate3d(0,0,0);
     border-color:transparent;
     /* min-height:100vh; *//*
     order:-1;*/
+    background:#fff;
+    box-shadow: 0px 3px 14px -8px #000;
+}
+article.active p{
+    padding:10px;
+}
+article.active footer{
+    margin-bottom:10px;
+}
+article.active:hover{
+    background:#fff !important;
 }
 article.active footer{
     transition:all 0.2s ease-in-out;
-    transform:translate(0px, 10px);
+    transform:translate(0px, 10px) translate3d(0,0,0);
 }
 article h3 a:hover{
     text-decoration:underline;
@@ -158,7 +169,7 @@ article footer{
     flex-wrap: wrap;
 }
 article.active:after{
-    transform:translate(0px, 200%);
+    transform:translate(0px, 200%) translate3d(0,0,0);
     opacity:0.4;
 }
 .tag{

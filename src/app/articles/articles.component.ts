@@ -65,12 +65,12 @@ export class ArticlesComponent {
           history.replaceState("", document.title, window.location.pathname
                                                            + window.location.search);
           setTimeout(function(){
-            document.querySelector("[data-articleid='" + id + "']").scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
+            document.querySelector("[data-articleindex='" + id + "']").scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
             let child: HTMLElement = document.querySelector("[data-articleid='" + id + "']").childNodes[0] as HTMLElement;
             if (child != null){
               child.click();
             }
-          }, 1300);
+          }, 900);
         }
         this.customArray = articles;
         
@@ -79,23 +79,37 @@ export class ArticlesComponent {
   openArticle(id){
     console.log(id);
     window.location.hash = "#" + id;
-    var parent = document.querySelector("[data-articleid='" + id + "']").parentElement;
+    var parent = document.querySelector("[data-articleIndex='" + id + "']");
     var changeOrDont = true;
     if (parent.classList.contains("active")){
       
     }else{
       changeOrDont = false;
-    }/* 
+    }
+    /* add body */
+    function search(nameKey, myArray){
+      for (var i=0; i < myArray.length; i++) {
+          if (myArray[i].id == nameKey) {
+              return myArray[i];
+          }
+      }
+    }
+    var body = search(id, this.articles).body;
+    //var body = this.articles[id].body;
+    console.log(body);
+    document.querySelector("[data-articleindexbody='" + id + "'").innerHTML = body;
+    /* 
     var lights = document.getElementsByClassName("active");
     while (lights.length){
       lights[0].classList.remove("active");
     } */
+  
     if (changeOrDont){
       parent.classList.remove("active");
       history.replaceState("", document.title, window.location.pathname
                                                        + window.location.search);
     }else{
-      // parent.classList.add("active");
+      parent.classList.add("active");
       parent.scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
      /*  document.body.scrollTop = 0;document.documentElement.scrollTop = 0;
      */}

@@ -57,26 +57,26 @@ header .pink{
 }
 @keyframes iAnim{
     from{
-        transform:translate(0px, 20px) scale(0.3) rotate(10deg);
+        transform:translate(0px, 20px) scale(0.3) rotate(10deg) translate3d(0,0,0);
     }
     60%{
-        transform:translate(0px, 0px) scale(0.3) rotate(9deg);
+        transform:translate(0px, 0px) scale(0.3) rotate(9deg) translate3d(0,0,0);
      /*    opacity:0.8; */
     }
     to{
-        transform:translate(0px, 20px) scale(0.3) rotate(10deg);
+        transform:translate(0px, 20px) scale(0.3) rotate(10deg) translate3d(0,0,0);
     }
 }
 @keyframes iAnimNote{
     from{
-        transform:translate(0px, 20px) scale(0.3) rotate(10deg);
+        transform:translate(0px, 20px) scale(0.3) rotate(10deg) translate3d(0,0,0);
     }
     60%{
-        transform:translate(0px, 0px) scale(0.3) rotate(5deg);
+        transform:translate(0px, 0px) scale(0.3) rotate(5deg) translate3d(0,0,0);
      /*    opacity:0.8; */
     }
     to{
-        transform:translate(0px, 20px) scale(0.3) rotate(10deg);
+        transform:translate(0px, 20px) scale(0.3) rotate(10deg) translate3d(0,0,0);
     }
 }
 header form{display:flex;flex-direction:column;
@@ -141,15 +141,15 @@ label{
 @keyframes contactAnim{
     0%{
         opacity:0;
-        transform:translate(0px, 20px);
+        transform:translate(0px, 20px) translate3d(0,0,0);
     }
     70%{
         opacity:0;
-        transform:translate(0px, 20px);
+        transform:translate(0px, 20px) translate3d(0,0,0);
     }
     100%{
         opacity:1;
-        transform:translate(0px, 0px);
+        transform:translate(0px, 0px) translate3d(0,0,0);
     }
 }
 .center > div:first-child{
@@ -173,6 +173,7 @@ header:hover svg{
 svg{
     transition:transform 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.1), opacity 0.3s ease-in-out;
     position:absolute;
+    transform:translate3d(0,0,0);
     bottom:-50%;
     left:0;
     right:0;
@@ -186,11 +187,11 @@ svg{
 @keyframes svgAnimation{
     from{
         opacity:1 !important;
-        transform:scale(2.5);
+        transform:scale(2.5) translate3d(0,0,0);
     }
     to{
         opacity:0.4 !important;
-        transform:scale(1);
+        transform:scale(1) translate3d(0,0,0);
     }
 }
 #wave2 {
@@ -208,7 +209,7 @@ svg{
     fill: #c67a708c; /* 4478e3 */
   }
   @keyframes wave {
-    to {transform: translateX(-100%);}
+    to {transform: translateX(-100%) translate3d(0,0,0);}
   }
   @media screen and (max-width:1600px){
       svg{
@@ -247,7 +248,7 @@ h1{
 }
 @keyframes honeAnimation{
     from{
-        transform:translate(0px, 10px);
+        transform:translate(0px, 10px) translate3d(0,0,0);
         opacity:0;
     }
 }
@@ -260,13 +261,13 @@ p{
         overflow:hidden;
         height:20px;
         opacity:0;
-        transform:translate(0px, 10px);
+        transform:translate(0px, 10px) translate3d(0,0,0);
     }
     to{
         max-width:970px;
         overflow:hidden;
         height:20px;
         opacity:1;
-        transform:translate(0px, 0px);
+        transform:translate(0px, 0px) translate3d(0,0,0);
     }
 }

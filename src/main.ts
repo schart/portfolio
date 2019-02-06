@@ -13,12 +13,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
 
-  window.onhashchange = function() {
-    if (window.location.hash.startsWith("#")){
-      console.log("Opening " + window.location.hash.split("#")[1]);
-      openArticle(window.location.hash.split("#")[1]);
-    }
-   }
    if (localStorage.getItem("hm-dm-0097") == "true"){
      document.body.classList.add("darkMode");
    }
@@ -40,13 +34,22 @@ platformBrowserDynamic().bootstrapModule(AppModule)
    var openArticle = function(id){
     console.log(id);
     window.location.hash = "#" + id;
-    var parent = document.querySelector("[data-articleid='" + id + "']").parentElement;
+    var parent = document.querySelector("[data-articleid='" + id + "']");
     var changeOrDont = true;
     if (parent.classList.contains("active")){
       
     }else{
       changeOrDont = false;
     }
+    function search(nameKey, myArray){
+      for (var i=0; i < myArray.length; i++) {
+          if (myArray[i].id == nameKey) {
+              return myArray[i];
+          }
+      }
+    }
+    var body = search(id, this.articles).body;
+    document.querySelector("[data-articleIndexBody='" + id + "'").innerHTML = body;
     /* var lights = document.getElementsByClassName("active");
     while (lights.length){
       lights[0].classList.remove("active");

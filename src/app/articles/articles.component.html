@@ -8,10 +8,11 @@
         <div class="pushIn">
             <div class="center">
                 <div class="articleFlex">
-                    <article *ngFor="let a of articles; let i = index" class="post" [ngClass]="a.tags">
+                    <article *ngFor="let a of articles; let i = index" class="post" [ngClass]="a.tags" [attr.data-articleIndex]="a.id">
                         <h3 attr.data-articleid="{{a.id}}"><a (click)="openArticle(a.id)">{{a.title}}</a></h3>
-                        <div class="intro" [innerHTML]="a.body"></div>
-                        <div class="body" [innerHTML]="a.body"></div>
+                        <div class="intro" [innerHTML]="a.body.substr(0, 50) + '...'"></div>
+                        <div class="body" [attr.data-articleIndexBody]="a.id"></div>
+                        <!--<div class="body" [innerHTML]="a.body"></div>-->
                         <footer>{{a.date}} <div class="articleTags"><span *ngFor="let b of a.tags; let in = index" class="tag">{{b}}</span></div></footer>
                     </article>
                 </div>

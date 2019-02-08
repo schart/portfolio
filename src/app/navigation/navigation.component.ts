@@ -15,6 +15,7 @@ export class NavigationComponent implements OnInit {
         element.click();
       }
       var articles = document.getElementsByTagName("article");
+      let actives = document.querySelectorAll(".active");
       if (document.querySelector(".current") != null){
         document.querySelector(".current").classList.remove("current");
       }
@@ -28,6 +29,12 @@ export class NavigationComponent implements OnInit {
         }
           
       }​
+      if (document.querySelector(".currentYear") != null){
+        document.querySelector(".currentYear").classList.remove("currentYear");
+      }
+      for (var i = 0; i < actives.length; i++){
+        actives[i].classList.remove("active");
+      }
     }
   }
   sortDate(year){
@@ -37,8 +44,12 @@ export class NavigationComponent implements OnInit {
         element.click();
       }
       var articles = document.getElementsByTagName("article");
+      let actives = document.querySelectorAll(".active");
       if (document.querySelector(".currentYear") != null){
-        document.querySelector(".currentYear").classList.remove("currentYear");
+          document.querySelector(".currentYear").classList.remove("currentYear");
+      }
+      if (document.querySelector(".current") != null){
+          document.querySelector(".current").classList.remove("current");
       }
       document.querySelector("a[data-test='" + year + "']").classList.add("currentYear");
       for (var i = 0; i < articles.length; i++) {
@@ -50,6 +61,9 @@ export class NavigationComponent implements OnInit {
         }
           
       }​
+      for (var i = 0; i < actives.length; i++){
+        actives[i].classList.remove("active");
+      }
     }
   }
   ngOnInit() {

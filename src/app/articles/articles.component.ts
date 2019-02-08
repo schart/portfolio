@@ -109,8 +109,10 @@ export class ArticlesComponent {
       history.replaceState("", document.title, window.location.pathname
                                                        + window.location.search);
     }else{
-      parent.classList.add("active");
       parent.scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
+      setTimeout(() => {
+        parent.classList.add("active");
+      }, 500);
      /*  document.body.scrollTop = 0;document.documentElement.scrollTop = 0;
      */}
   }

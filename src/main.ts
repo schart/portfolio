@@ -31,7 +31,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
           counter = 0;
         }
   });
-   var openArticle = function(id){
+var openArticle = function(id){
     console.log(id);
     window.location.hash = "#" + id;
     var parent = document.querySelector("[data-articleid='" + id + "']");
@@ -59,8 +59,11 @@ platformBrowserDynamic().bootstrapModule(AppModule)
       history.replaceState("", document.title, window.location.pathname
                                                        + window.location.search);
     }else{
-      parent.classList.add("active");
       parent.scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
      /*  document.body.scrollTop = 0;document.documentElement.scrollTop = 0;
-     */}
+     */
+      setTimeout(() => {
+        parent.classList.add("active");
+      }, 500);
+    }
   }

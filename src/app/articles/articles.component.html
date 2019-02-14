@@ -5,6 +5,13 @@
 <main>
         <app-header></app-header>
         <div class="belowHeadDiv"></div>
+        <div class="headerImages">
+            <div *ngFor="let a of strippedArticles; let i = index">
+                <div *ngIf="i <= 7">
+                    <img src="{{a.body}}" />
+                </div>
+            </div>
+        </div>
         <div class="pushIn">
             <div class="center">
                 <div class="articleFlex">

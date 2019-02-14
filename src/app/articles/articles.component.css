@@ -126,7 +126,20 @@ article > div{
 article.active .intro{
     display:none;
 }
-
+.headerImages{
+    min-height:55vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.headerImages > div {
+    display: contents;
+}
+.headerImages > div > div{
+    max-height:250px;
+    overflow:hidden;
+}
 article.active .body{
     display:block;
 }

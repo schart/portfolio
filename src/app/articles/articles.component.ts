@@ -15,9 +15,12 @@ export class ArticlesComponent {
   users;
   articles;
   customArray;
+  match;
+  strippedArticles;
   constructor(private articleGet: ArticlesGet){
-      
       this.articles = [];
+      this.strippedArticles = [];
+      this.match = /src="([^\\"]*)" \/>/iu;
       this.articleGet.getArticles().subscribe(articles => {
         console.log(articles);
         var counter = 0;
@@ -37,6 +40,11 @@ export class ArticlesComponent {
             title: title,
             id: articles[i].id
           });
+          if (body.match(this.match)){
+            this.strippedArticles.push({
+              body: body.match(this.match)[1]
+            })
+          }
         }
         if (window.location.hash.startsWith("#/")){
           var hash = window.location.hash;

@@ -8,12 +8,12 @@
         <div class="headerImages">
             <div *ngFor="let a of strippedArticles; let i = index">
                 <div *ngIf="i <= 7">
-                    <img src="{{a.body}}" />
+                    <a href="#{{a.id}}" (click)="openArticle(a.id, 'promo')"><img src="{{a.body}}" class="promoimage" /></a>
                 </div>
             </div>
         </div>
         <div class="pushIn">
-            <div class="center">
+            <div class="center" id="topOfArticles">
                 <div class="articleFlex">
                     <article *ngFor="let a of articles; let i = index" class="post" [ngClass]="a.tags" [attr.data-articleIndex]="a.id">
                         <h3 attr.data-articleid="{{a.id}}"><a (click)="openArticle(a.id)">{{a.title}}</a></h3>

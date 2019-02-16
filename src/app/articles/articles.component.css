@@ -132,13 +132,24 @@ article.active .intro{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 1200px;
     margin: 0 auto;
+    max-height: 56vh;
+    overflow: hidden;
 }
 .headerImages > div {
     display: contents;
 }
 .headerImages > div > div{
-    max-height:250px;
+    height: 28vh;
     overflow:hidden;
+}
+img.promoimage {
+    min-height: 100%;
+    max-width: 130%;
+    min-width: 110%;
+    margin-left:-10%;
+}
+#topOfArticles{
+    min-height:100vh;
 }
 article.active .body{
     display:block;

@@ -334,3 +334,16 @@ body.darkMode article.active, body.darkMode article.active:hover{
     padding-top:15px;
 }
 body.darkMode aside app-navigation nav div ul li a:hover, .darkMode .showAll[_ngcontent-c2]:hover, .darkMode ul[_ngcontent-c2] li[_ngcontent-c2] a[_ngcontent-c2]:hover{background:#ad6a614f !important;}
+.headerImages.hide{
+    display:none !important;
+}
+@media screen and (max-width: 1000px){
+    .headerImages{
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+}
+@media screen and (max-width: 800px){
+    .headerImages{
+        grid-template-columns: 1fr 1fr !important;
+    }
+}

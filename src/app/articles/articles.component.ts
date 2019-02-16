@@ -16,11 +16,13 @@ export class ArticlesComponent {
   articles;
   customArray;
   match;
+  matchLink;
   strippedArticles;
   constructor(private articleGet: ArticlesGet){
       this.articles = [];
       this.strippedArticles = [];
       this.match = /src="([^\\"]*)" \/>/iu;
+      this.matchLink = /href="([^\\"]*)"/iu;
       this.articleGet.getArticles().subscribe(articles => {
         console.log(articles);
         var counter = 0;
@@ -41,8 +43,14 @@ export class ArticlesComponent {
             id: articles[i].id
           });
           if (body.match(this.match)){
+            let nnlink = "#" + articles[i].id;
+            if (body.match(this.matchLink)){
+              nnlink = body.match(this.matchLink)[1]
+            }
             this.strippedArticles.push({
-              body: body.match(this.match)[1]
+              body: body.match(this.match)[1],
+              link: nnlink,
+              id: articles[i].id
             })
           }
         }
@@ -81,11 +89,16 @@ export class ArticlesComponent {
           }, 900);
         }
         this.customArray = articles;
+        /* Load promo images */
         
       });
   }
-  openArticle(id){
+  openArticle(id, promo){
     console.log(id);
+    if (promo == "promo"){
+      let showAll: HTMLElement = document.querySelector(".showAll") as HTMLElement;
+      showAll.click();
+    }
     window.location.hash = "#" + id;
     var parent = document.querySelector("[data-articleIndex='" + id + "']");
     var changeOrDont = true;

@@ -8,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationComponent implements OnInit {
 
   constructor() { }
-  sort(tag){
+  sort(tag){/* 
+    if (tag == ""){
+    document.querySelector(".headerImages").classList.remove("hide")
+    }else{
+      console.log("hiya")
+      let headerImages: HTMLElement = document.querySelector(".headerImages") as HTMLElement;
+      headerImages.classList.add("hide")
+    } */
     if (window.location.pathname == "/"){
       if (document.querySelector(".dateShowall") != null){
         let element: HTMLElement = document.querySelector(".dateShowall") as HTMLElement;
         element.click();
       }
       var articles = document.getElementsByTagName("article");
+      let topOfArticles = document.getElementById("topOfArticles");
       let actives = document.querySelectorAll(".active");
       if (document.querySelector(".current") != null){
         document.querySelector(".current").classList.remove("current");
@@ -35,9 +43,14 @@ export class NavigationComponent implements OnInit {
       for (var i = 0; i < actives.length; i++){
         actives[i].classList.remove("active");
       }
+      topOfArticles.scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
     }
   }
-  sortDate(year){
+  sortDate(year){/* 
+    if (year == ""){
+      console.log("Showing all")
+      document.querySelector(".headerImages").classList.remove("hide")
+     }else{ document.querySelector(".headerImages").classList.add("hide") } */
     if (window.location.pathname == "/"){
       if (document.querySelector(".tagsShowall") != null){
         let element: HTMLElement = document.querySelector(".tagsShowall") as HTMLElement;
@@ -45,6 +58,7 @@ export class NavigationComponent implements OnInit {
       }
       var articles = document.getElementsByTagName("article");
       let actives = document.querySelectorAll(".active");
+      let topOfArticles = document.getElementById("topOfArticles");
       if (document.querySelector(".currentYear") != null){
           document.querySelector(".currentYear").classList.remove("currentYear");
       }
@@ -64,6 +78,7 @@ export class NavigationComponent implements OnInit {
       for (var i = 0; i < actives.length; i++){
         actives[i].classList.remove("active");
       }
+      topOfArticles.scrollIntoView({ behavior: 'smooth',block: "start", inline: "nearest"});
     }
   }
   ngOnInit() {

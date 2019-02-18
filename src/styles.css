@@ -45,8 +45,9 @@ html{
 .green{background:var(--green);}
 .blue{background:var(--blue);}
 #container{
-    display:flex;
-    min-height:100vh;
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: [sidebar] 200px [content] 1fr;
 }
 body, input, button{
     font-family: 'Roboto', sans-serif;
@@ -244,12 +245,15 @@ header{
     }
     .pushIn, header{
         padding:30px !important;
-    }
+    }/* 
     aside{
         display:none;
-    }
+    } */
     body.darkMode aside{
         border-right: 0px solid #ad6a61
+    }
+    #container{
+        grid-template-columns:[sidebar] 0px [content] 1fr;
     }
 }
 @media screen and (min-width:900px){
@@ -345,5 +349,8 @@ body.darkMode aside app-navigation nav div ul li a:hover, .darkMode .showAll[_ng
 @media screen and (max-width: 800px){
     .headerImages{
         grid-template-columns: 1fr 1fr !important;
+    }
+    .promoimage{
+        max-width:180% !important;
     }
 }
